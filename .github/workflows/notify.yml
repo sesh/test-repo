@@ -12,4 +12,4 @@ jobs:
     container: alpine/httpie
     steps:
       - name: Notify parent repo
-        run: http post --ignore-stdin https://api.github.com/repos/sesh/brntn.me/dispatches "Authorization:token ${{ secrets.NOTIFY_TOKEN }}" event_type=build
+        run: http post https://api.github.com/repos/sesh/brntn.me/dispatches "Authorization:token ${{ secrets.NOTIFY_TOKEN }}" event_type=build --ignore-stdin
